@@ -18,7 +18,38 @@ fun main() {
     props[StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG] = Serdes.String().javaClass
 
     val builder = StreamsBuilder()
-    val instruments = setOf("ZOOM", "LARMOR", "SANS2D")
+    val instruments = setOf("LARMOR",
+            "ALF",
+            "DEMO",
+            "IMAT",
+            "MUONFE",
+            "ZOOM",
+            "IRIS",
+            "IRIS_SETUP",
+            "ENGINX_SETUP",
+            "HRPD",
+            "POLARIS",
+            "VESUVIO",
+            "ENGINX",
+            "MERLIN",
+            "RIKENFE",
+            "SELAB",
+            "EMMA-A",
+            "SANDALS",
+            "GEM",
+            "MAPS",
+            "OSIRIS",
+            "INES",
+            "TOSCA",
+            "LOQ",
+            "LET",
+            "MARI",
+            "CRISP",
+            "SOFTMAT",
+            "SURF",
+            "NIMROD",
+            "DETMON",
+            "EMU")
     for (item in instruments){
         val topicName = item + "_runInfo"
         val inStream = builder.stream<String, String>(topicName)
